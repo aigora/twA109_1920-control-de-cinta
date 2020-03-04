@@ -11,4 +11,14 @@ Laura Lopez de Meneses Calvo, Diego Manzano Garijo y Tomás Sánchez Villaluenga
 Mediante este proyecto se tratará de simular el control en las dimensiones de los productos que pasan por una cinta de producción, como si de un modelo se tratase. 
 Para la programación de este utilizaremos la plataforma de Arduino (programa y placa) junto a Dev C++, el cual complementará al programa anterior y nos permitira hacer algo mas completa la programación.
 
+Los elementos utilizados son:
+- Placa Arduino
+- Motor
+- Puente H (para monitorizar al motor)
+- Interruptor
+- Leds rojo y verde
+- Resistencias
+- Sensor de proximidad (ultrasonido)
+- Cableado
+
 
