@@ -1,4 +1,4 @@
-# Título del trabajo
+# Control para cinta de producción
 
 Se trata de una simulacion de un control para una cinta de producción como si de una fábrica se tratase. Esta se basa en la apertura o cierre de un circuito que consiste en el funcionamiento de un motor junto a un sensor de proximidad, el cual dirá, dentro de un rango, si las dimensiones del producto que pase por la cinta es el correcto o no. En caso de dimensiones correctas el circuito seguira funcionando, sin embargo, si las dimensiones son incorrectas el motor parará y se encendera uno de los leds en señal de alerta. 
 
