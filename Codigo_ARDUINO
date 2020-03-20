@@ -1,0 +1,110 @@
+const int EchoPin = 5;
+const int TriggerPin = 6;
+const int inputPin = 2;
+const int motorPin = 3;
+
+
+void setup() {
+
+ Serial.begin(9600);
+
+ //INTERRUPTOR:
+ pinMode(inputPin, INPUT);
+     
+ //LED_VERDE:
+ pinMode(8, OUTPUT); // Configurado el pin 8 como salida
+ 
+ //LED_ROJO:
+ pinMode(12, OUTPUT); // Configurado el pin 12 como salida
+
+ //SENSOR:
+   pinMode(TriggerPin, OUTPUT);
+   pinMode(EchoPin, INPUT);
+
+ //MOTOR:
+ pinMode(motorPin, OUTPUT);
+ 
+}
+
+void loop() {
+
+   /*    //LED_VERDE:
+       digitalWrite(8, HIGH); // Pone a “1 lógico” (5V) el pin 8
+       delay(100); // Espera durante 100 milisegundos
+       digitalWrite(8, LOW); // Pone a “0 lógico” (0V) el pin 8
+       delay(100); // Espera durante 100 milisegundos
+
+       //LED_ROJO:
+       digitalWrite(12, HIGH); // Pone a “1 lógico” (5V) el pin 12
+       delay(100); // Espera durante 100 milisegundos
+       digitalWrite(12, LOW); // Pone a “0 lógico” (0V) el pin 12
+       delay(100); // Espera durante 100 milisegundos
+
+     */
+
+       //INTERRUPTOR:
+        int value;      //estar atentos a las declaraciones, al principio o no??
+        value = digitalRead(inputPin); //lectura digital de pin
+          //mandar mensaje a puerto serie en función del valor leido
+        if (value == HIGH) {
+                 Serial.println("Encendido");
+                           }
+                            else {
+                                Serial.println("Apagado");
+                                   }
+           delay(10);            //Alo mejor hace falta quitarlo :)
+     
+       //SENSOR:
+       int cm = ping(TriggerPin, EchoPin);      //estar atentos a las declaraciones, al principio o no??
+       Serial.print("Distancia: ");
+       Serial.println(cm);
+       delay(1000);
+
+   /*
+       if( cm<=15)
+          { digitalWrite(8, HIGH); // Pone a “1 lógico” (5V) el pin 8
+            digitalWrite(12, LOW); // Pone a “0 lógico” (0V) el pin 12
+            digitalWrite(motorPin, HIGH); //MOTOR encendido
+          }
+
+       if( cm>15)
+          {digitalWrite(8, LOW); // Pone a “0 lógico” (0V) el pin 8
+           digitalWrite(12, HIGH); // Pone a “1 lógico” (5V) el pin 12
+           digitalWrite(motorPin, LOW); //MOTOR encendido
+          }
+
+     */
+
+       do
+       { digitalWrite(8, HIGH); // Pone a “1 lógico” (5V) el pin 8
+         digitalWrite(12, LOW); // Pone a “0 lógico” (0V) el pin 12
+         digitalWrite(motorPin, HIGH); //MOTOR encendido
+       }while(cm<=15);
+
+       digitalWrite(8, LOW); // Pone a “0 lógico” (0V) el pin 8
+       digitalWrite(12, HIGH); // Pone a “1 lógico” (5V) el pin 12
+       digitalWrite(motorPin, LOW); //MOTOR encendido
+
+       delay(5000);
+       digitalWrite(motorPin, HIGH);
+
+       delay(500);
+               
+}
+
+
+
+int ping(int TriggerPin, int EchoPin) {
+   long duration, distanceCm;
+   
+   digitalWrite(TriggerPin, LOW);  //para generar un pulso limpio ponemos a LOW 4us
+   delayMicroseconds(4);
+   digitalWrite(TriggerPin, HIGH);  //generamos Trigger (disparo) de 10us
+   delayMicroseconds(10);
+   digitalWrite(TriggerPin, LOW);
+   
+   duration = pulseIn(EchoPin, HIGH);  //medimos el tiempo entre pulsos, en microsegundos
+   
+   distanceCm = duration * 10 / 292/ 2;   //convertimos a distancia, en cm
+   return distanceCm;
+}
