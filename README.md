@@ -4,7 +4,7 @@ Se trata de una simulacion de un control para una cinta de producción como si d
 
 ## Integrantes del equipo
 
-Laura Lopez de Meneses Calvo, Diego Manzano Garijo y Tomás Sánchez Villaluenga (tsvillaluenga).
+Laura Lopez de Meneses Calvo (lauralopezdemenesescalvo), Diego Manzano Garijo (diegomanzanogarijo5) y Tomás Sánchez Villaluenga (tsvillaluenga).
 
 ## Objetivos del trabajo
 
