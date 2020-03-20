@@ -21,4 +21,5 @@ Los elementos utilizados son:
 - Sensor de proximidad (ultrasonido)
 - Cableado
 
+https://www.luisllamas.es/wp-content/uploads/2015/06/arduino-ultrasonidos-montaje.png 
 
