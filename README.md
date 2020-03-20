@@ -13,12 +13,11 @@ Para la programación de este utilizaremos la plataforma de Arduino (programa y 
 
 Los elementos utilizados son:
 - Placa Arduino
-- Motor
-- Puente H (para monitorizar al motor)
-- Interruptor
-- Leds rojo y verde
-- Resistencias
-- Sensor de proximidad (ultrasonido)
+- Motor (Actuador)
+- Interruptor (Actuador)
+- Leds rojo y verde (Actuador)
+- Resistencias (Actuador)
+- Sensor de proximidad: Ultrasonido (Sensor)
 - Cableado
 
 https://www.luisllamas.es/wp-content/uploads/2015/06/arduino-ultrasonidos-montaje.png 
