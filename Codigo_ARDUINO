@@ -66,7 +66,8 @@ void loop() {
       
 
        if( distanceCm > 15)
-          {digitalWrite(8, LOW); // Pone a “0 lógico” (0V) el pin 8
+          {Serial.println("ERROR");
+           digitalWrite(8, LOW); // Pone a “0 lógico” (0V) el pin 8
            digitalWrite(12, HIGH); // Pone a “1 lógico” (5V) el pin 12
            digitalWrite(motorPin, LOW); //MOTOR encendido
           }
