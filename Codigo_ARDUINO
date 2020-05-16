@@ -39,11 +39,7 @@ void loop() {
           //mandar mensaje a puerto serie en función del valor leido
         if (value == HIGH) {
                  Serial.println("Encendido");
-                           }
-                            else {
-                                Serial.println("Apagado");
-                                   }
-           delay(10);            //Alo mejor hace falta quitarlo :)
+                          
      
        //SENSOR:
           digitalWrite(TriggerPin, LOW);  //para generar un pulso limpio ponemos a LOW 4us
@@ -67,10 +63,20 @@ void loop() {
 
        if( distanceCm > 15)
           {Serial.println("ERROR");
-           digitalWrite(8, LOW); // Pone a “0 lógico” (0V) el pin 8
+            digitalWrite(8, LOW); // Pone a “0 lógico” (0V) el pin 8
            digitalWrite(12, HIGH); // Pone a “1 lógico” (5V) el pin 12
-           digitalWrite(motorPin, LOW); //MOTOR encendido
+           digitalWrite(motorPin, LOW); //MOTOR apagado
           }
 
-}
 
+           }else 
+              {
+                  Serial.println("Apagado");
+                          digitalWrite(8, LOW); 
+                          digitalWrite(12, LOW); 
+                          digitalWrite(motorPin, LOW); //MOTOR apagado
+                    }
+                    
+           delay(10);  
+
+}
